@@ -28,8 +28,7 @@ public class PostServiceImpl implements PostService {
     @Override
     public PostDto findById(int id) {
         var post = postRepo.findById(id);
-        PostDto postDto = new PostDto(post.getId(),post.getTitle(),post.getContent(),post.getAuthor());
-        return postDto;
+        return new PostDto(post.getId(),post.getTitle(),post.getContent(),post.getAuthor());
     }
 
     @Override
